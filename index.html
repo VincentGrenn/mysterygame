@@ -10,47 +10,8 @@
     <title>The Bermuda Disappearance</title>
 </head>
 <body>
-    <div id="viewport">
-        <div id="main">
-            <label class="titles" id="location-name">Your Home</label>
-            <div id="viewframe">
-                <img id="viewframe-image" src="https://t3.ftcdn.net/jpg/04/20/22/12/360_F_420221259_bfypAx8CpCU1d6uzWu05omTAssxa3dnU.jpg"></img>
-            </div>
-        </div>
-        <div id="inventory">
-            <label class="titles">Inventory</label>
-            <div id="flex-layout">
-                <div class="items">
-                    <image class="itemimages" src="placeholder"></image>
-                    <label class="itemlabels">Item</label>
-                </div>
-            </div>
-        </div>
-        <div id="interaction">
-            <div id="dialog-context-box">
-                <label id="dialog-context-label">I am offered a job as an investigator for the discovery of the missing Flight 99 in The Bermuda Triangle.</label>
-            </div>
-            <a href="npcia.html"><button class="choicebuttons" id="accept">Accept</button></a>
-            <a href="fail.html"><button class="choicebuttons" id="decline">Decline</button></a>
-        </div>
-        <div id="stats">
-            <label class="titles">Stats</label>
-            <div id="stats-info">
-                <div class="stat-info-box">
-                    <label class="stat-label">Sleep</label>
-                    <div class="stat-meter">
-                        <label id="sleep-value">100 / 100</label>
-                    </div>
-                </div>
-                <div class="stat-info-box">
-                    <label class="stat-label">Sanity</label>
-                    <div class="stat-meter">
-                        <label id="sanity-value">100 / 100</label>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <h1 id="main-title">The Bermuda Disappearance</h1>
+    <a id="anchor-on-play-btn" href="investigatorhome.html"><button id="play-button" onclick="setNumber('Sleep', 100); setNumber('Sanity', 100); removeAllItems();">PLAY</button></a>
     <script src="./game.js"></script>
 </body>
 </html>
