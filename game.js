@@ -126,8 +126,11 @@ function checkGameOver() {
 function refresh() {
   // fill in inventory and status spans
   let inv = document.getElementById("inventory");
+  console.log("inventory check");
+  console.log(inv);
   if (inv) {
     let bag = getBag();
+    console.log(bag);
     // inv.textContent = bag.length ? bag.join(", ") : "nothing yet";
   }
 
