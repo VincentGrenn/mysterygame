@@ -126,11 +126,14 @@ function checkGameOver() {
 function refresh() {
   // fill in inventory and status spans
   let inv = document.getElementById("inventory");
-  console.log("inventory check");
-  console.log(inv);
+  // console.logs dont show up in the vscode terminal, you have
+  // to use the dev tool's console in the browser
   if (inv) {
     let bag = getBag();
-    console.log(bag);
+    // bag[0]
+    for (let item in bag) {
+      item
+    }
     // inv.textContent = bag.length ? bag.join(", ") : "nothing yet";
   }
 
