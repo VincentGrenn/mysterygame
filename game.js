@@ -4,6 +4,14 @@
 //  See the cheat sheet for how to use it.
 // ============================================
 
+const Layout = document.getElementById("flex-layout");
+const Temp = document.getElementById("temp");
+const ItemImages = {
+  Keycard: "https://static.vecteezy.com/system/resources/thumbnails/060/066/646/small_2x/energetic-beautiful-sci-fi-keycard-glowing-symbols-metallic-finish-futuristic-design-no-background-with-transparent-background-expertly-shot-free-png.png",
+  NPCIA_Badge: "https://images.pixels.com/images/artworkimages/medium/2/drug-enforcement-administration-d-e-a-special-agent-badge-over-white-leather-serge-averbukh-transparent.png"
+};
+let Inventory = [];
+
 // ---------- ITEMS ----------
 
 function addItem(item) {
@@ -132,7 +140,16 @@ function refresh() {
     let bag = getBag();
     // bag[0]
     for (let item in bag) {
-      item
+      console.log(item);
+      // if the player alr has the item, don't do anything
+      if (Inventory[item]) { continue; }
+      Inventory[item] = true;
+      let New = Temp.cloneNode();
+      let NewImage = New.querySelector("itemimages");
+      let NewLabel = New.querySelector("itemlabels");
+      NewImage.src = ItemImages[item];
+      NewLabel.innerText = item;
+      Layout.appendChild(New);
     }
     // inv.textContent = bag.length ? bag.join(", ") : "nothing yet";
   }
