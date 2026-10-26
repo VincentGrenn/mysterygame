@@ -139,14 +139,20 @@ function refresh() {
   if (inv) {
     let bag = getBag();
     // bag[0]
-    for (let item in bag) {
+    for (let itemIndex in bag) {
+      let item = bag[itemIndex];
       console.log(item);
       // if the player alr has the item, don't do anything
       if (Inventory[item]) { continue; }
       Inventory[item] = true;
       let New = Temp.cloneNode();
-      let NewImage = New.querySelector("itemimages");
-      let NewLabel = New.querySelector("itemlabels");
+      let NewImage = New.querySelector("image");
+      let NewLabel = New.querySelector("label");
+      New.id = item;
+      console.log("new");
+      console.log(New);
+      console.log(NewImage);
+      console.log(NewLabel);
       NewImage.src = ItemImages[item];
       NewLabel.innerText = item;
       Layout.appendChild(New);
