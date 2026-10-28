@@ -145,7 +145,7 @@ function refresh() {
       // if the player alr has the item, don't do anything
       if (Inventory[item]) { continue; }
       Inventory[item] = true;
-      let New = Temp.cloneNode();
+      let New = Temp.cloneNode(true);
       let NewImage = New.querySelector("image");
       let NewLabel = New.querySelector("label");
       New.id = item;
