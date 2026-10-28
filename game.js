@@ -141,20 +141,16 @@ function refresh() {
     // bag[0]
     for (let itemIndex in bag) {
       let item = bag[itemIndex];
-      console.log(item);
       // if the player alr has the item, don't do anything
       if (Inventory[item]) { continue; }
       Inventory[item] = true;
       let New = Temp.cloneNode(true);
-      let NewImage = New.querySelector("image");
+      let NewImage = New.querySelector("img");
       let NewLabel = New.querySelector("label");
       New.id = item;
-      console.log("new");
-      console.log(New);
-      console.log(NewImage);
-      console.log(NewLabel);
       NewImage.src = ItemImages[item];
       NewLabel.innerText = item;
+      New.hidden = false;
       Layout.appendChild(New);
     }
     // inv.textContent = bag.length ? bag.join(", ") : "nothing yet";
@@ -163,6 +159,7 @@ function refresh() {
   let sleepvalue = document.getElementById("sleep-value");
   let sanityvalue = document.getElementById("sanity-value");
   if (sleepvalue && sanityvalue) {
+    checkGameOver();
     sleepvalue.innerText = getNumber("Sleep").toString() + " / 100";
     sanityvalue.innerText = getNumber("Sanity").toString() + " / 100";
   }

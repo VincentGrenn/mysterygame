@@ -67,10 +67,19 @@ body {
 }
 
 .items {
-    display: flex;
     outline: solid black 1px;
     margin: 5px;
     padding: 5px;
+    max-width: 25%;
+    max-height: 50%;
+}
+
+.itemimages {
+    width: 100%;
+    height: 75%;
+}
+
+.itemlabels {
     width: 100%;
 }
 
